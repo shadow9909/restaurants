@@ -1,2 +1,7 @@
-{% extends 'main.html' %} {% block content %}----------- List of restaurants
--------{%endblock content%}
+{% extends 'main.html' %} {% block content %}---------- List of restaurants
+------ {% for restaurant in restaurants %}
+<p>
+  {{restaurant.name}} <a href="{% url 'restaurant' restaurant.id %}"> Link </a>
+  <a href="{% url 'update-restaurant' restaurant.id %}"> Update </a>
+</p>
+{% endfor %} {%endblock content%}
